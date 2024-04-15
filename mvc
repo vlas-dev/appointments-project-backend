@@ -1,0 +1,50 @@
+In the **MVC (Model-View-Controller)** pattern, the **business logic** should be placed in the **Model** component. Let's break it down:
+
+1. **Model**:
+   - The **Model** represents the **data** and **business logic** of the application.
+   - It directly manages the data (such as database interactions) and contains the rules and operations related to the application's core functionality.
+   - Business logic includes tasks like validation, calculations, data transformations, and interactions with external services.
+   - For example, if you're building an e-commerce application, the Model would handle tasks like processing orders, calculating prices, and managing inventory.
+
+2. **Controller**:
+   - The **Controller** is responsible for handling user input and managing the flow of data between the Model and the View.
+   - It receives requests from the user (e.g., via HTTP routes) and invokes the appropriate methods in the Model.
+   - The Controller does not contain business logic itself; instead, it delegates to the Model to perform the necessary operations.
+
+3. **View**:
+   - The **View** is responsible for displaying data to the user.
+   - It should not contain business logic but rather focus on rendering the data provided by the Controller.
+   - Views are typically templates or UI components that present information to the user.
+
+Remember these key points:
+
+- **Separation of Concerns**: The MVC pattern aims to separate different concerns (data, presentation, and control) to improve maintainability and flexibility.
+- **Business Rules vs. Business Logic**:
+  - **Business rules** define constraints, policies, and guidelines specific to your domain (e.g., "Customers must have a valid email address").
+  - **Business logic** refers to the actual implementation of operations (e.g., calculating discounts, updating inventory).
+  - While business rules can be part of the Model, business logic (implementation details) should reside there.
+
+Example (E-commerce Application):
+
+- **Model**:
+  - Contains methods for processing orders, calculating prices, managing inventory, and interacting with the database.
+  - Validates data (e.g., ensuring valid email addresses, checking stock availability).
+  - Implements business logic related to the application's core functionality.
+
+- **Controller**:
+  - Receives requests (e.g., "Place an order," "Update cart") from the user.
+  - Invokes the appropriate Model methods (e.g., `placeOrder`, `updateCart`).
+  - Orchestrates the interaction between the Model and the View.
+
+- **View**:
+  - Renders order confirmation pages, product listings, and shopping cart views.
+  - Displays data provided by the Controller (e.g., order details, product names).
+
+By following this structure, you achieve a clear separation of concerns, making your code more modular and maintainable. 🚀¹²³⁴
+
+Source: Conversation with Bing, 3/17/2024
+(1) design patterns - Business logic in MVC - Stack Overflow. https://stackoverflow.com/questions/4415904/business-logic-in-mvc.
+(2) Understanding the Model-View-Controller (MVC) Pattern: A Guide ... - Medium. https://medium.com/@nikitinsn6/understanding-the-model-view-controller-mvc-pattern-a-guide-for-software-developers-3530604d9c8d.
+(3) Mastering the MVC Pattern: A Comprehensive Guide - LinkedIn. https://www.linkedin.com/pulse/mastering-mvc-pattern-comprehensive-guide-abinash-mishra-xwbzf.
+(4) MVC Design Pattern - GeeksforGeeks. https://www.geeksforgeeks.org/mvc-design-pattern/.
+(5) c# - MVC: Where to put business logic? - Stack Overflow. https://stackoverflow.com/questions/18563229/mvc-where-to-put-business-logic.
