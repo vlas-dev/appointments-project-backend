@@ -25,7 +25,7 @@ import cors from 'cors'
 
     app.use( bodyParser.urlencoded( {extended:true} ) )
     app.use(express.json())
-    app.use(cors({origin: 'https://appointments-project-frontend.vercel.app/'}))
+    app.use(cors({origin: 'https://appointments-project-frontend.vercel.app'}))
     app.use('/appointments', appointmentRouter)
 
     app.get('/', (req, res)=>{
